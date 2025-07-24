@@ -15,7 +15,6 @@ struct ManifestoSection: View {
             AnimatedGradientBackground()
             ScrollView {
                 VStack(spacing: 32) {
-                    Spacer(minLength: 60)
                     HStack(spacing: 16) {
                         AnimatedIcon(systemName: "heart.fill", color: .red, delay: 0.1)
                         Text("Manifesto")
@@ -73,7 +72,7 @@ struct ManifestoSection: View {
                             .scaleEffect(appeared ? 1 : 0.9)
                             .animation(.spring(response: 0.8, dampingFraction: 0.8).delay(0.7), value: appeared)
                     }
-                    Spacer()
+                    Color.clear.frame(height: 100) // Ensures scrollability
                 }
                 .padding(.vertical, 32)
                 .onAppear { appeared = true }
